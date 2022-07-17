@@ -1,0 +1,43 @@
+.sidebar{
+    width: 220px;
+    background: rgb(42, 42, 42);
+}
+
+.logo{
+    padding-top: 15px;
+    padding-left: 2rem;
+}
+
+.logo img{
+    width: 100px;
+}
+
+.side__box{
+    padding-top: 2rem;
+}
+
+.heading{
+    padding-left: 2rem;
+    color: gray;
+    font-size: 14px;
+}
+
+.box__two{
+    margin-top: 30px;
+}
+
+
+@media (max-width:1200px) {
+    .sidebar{
+        width: 70px;
+        padding-right: 10px;
+    }
+
+    .sidebar .heading{
+        display: none;
+    }
+
+    .logo{
+        display: none;
+    }
+}
