@@ -1,0 +1,28 @@
+.moviesRow{
+    border-radius: 10px;
+    position: relative;
+    transition: .3s;
+}
+
+.fav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.50);
+    color: var(--second-color);
+    padding: 5px;
+    border-radius: 0px 0px 10px 0px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+
+.fav .MuiSvgIcon-root:hover{
+    color: var(--second-color);
+}
+
+
+.moviesRow img{
+    max-height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}

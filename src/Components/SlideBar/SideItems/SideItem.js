@@ -1,7 +1,8 @@
 import React from "react";
 import "./SideItem.css";
+import {Link} from 'react-router-dom';
 
-function SideItem({Icon , Name , active}) {
+function SideItem({Icon , Name , active , link}) {
 
     const buttonHandler = () => {
       
@@ -9,10 +10,10 @@ function SideItem({Icon , Name , active}) {
 
   return (
     <>
-      <div onClick={() => buttonHandler()} className={active ? 'sideitem active' : 'sideitem'}>
+      <Link to={link ? link : '/'} className="link"><div onClick={() => buttonHandler()} className={active ? 'sideitem active' : 'sideitem'}>
        <Icon className="icon" />
        <span>{Name}</span>
-      </div>
+      </div></Link>
     </>
   );
 }

@@ -2,15 +2,35 @@ import React from "react";
 import "./MoviesRow.css";
 import StarIcon from "@mui/icons-material/Star";
 import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useDispatch } from "react-redux";
+import { favAdd } from "../../../features/favSlice";
 import { Link } from "react-router-dom";
 const base_url = "https://image.tmdb.org/t/p/original";
 
 function MoviesRow({ img, id, title, type, release_date, rate }) {
   const year = new Date(release_date);
 
+  const [icon, setIcon] = React.useState(<FavoriteBorderIcon />);
+  const dispatch = useDispatch();
 
   const truncate = (string, num) => {
     return string?.length > num ? string.substr(0, num - 1) + "..." : string;
+  };
+
+  const fav = [{
+    id: id,
+    img: img,
+    title: title,
+    type: type,
+    release_date: release_date,
+    rate: rate,
+  }];
+
+  const FavHanlder = () => {
+    setIcon(<FavoriteIcon />);
+    dispatch(favAdd({fav}));
   };
 
   return (
@@ -19,6 +39,9 @@ function MoviesRow({ img, id, title, type, release_date, rate }) {
         <Link to={`/${type}/${id}`}>
           <img src={`${base_url}${img}`} />
         </Link>
+        <div className="fav" onClick={() => FavHanlder()}>
+          {icon}
+        </div>
 
         <div className="movie__info">
           <div className="movie__name">

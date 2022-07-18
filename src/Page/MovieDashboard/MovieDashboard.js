@@ -1,18 +1,17 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
 import "./MovieDashboard.css";
 import { useParams } from "react-router-dom";
 import { useGetByIdQuery } from "../../features/Api";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import LanguageIcon from "@mui/icons-material/Language";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import IconButton from '@mui/material/IconButton';
-import {useNavigate} from "react-router-dom"
+import IconButton from "@mui/material/IconButton";
+import { useNavigate } from "react-router-dom";
 const base_url = "https://image.tmdb.org/t/p/original";
 
-
 function MovieDashboard() {
-  const [string, setString] = useState(150)
-  const [show, setShow] = useState('More');
+  const [string, setString] = useState(150);
+  const [show, setShow] = useState("More");
   const navigate = useNavigate();
   const { id, type } = useParams();
   const info = {
@@ -24,15 +23,22 @@ function MovieDashboard() {
 
   console.log(data);
 
-
-  const truncate = (string , num) => {
-    return  string?.length > num ? string.substr(0, num-1)+'...' : string
-  }
+  const truncate = (string, num) => {
+    return string?.length > num ? string.substr(0, num - 1) + "..." : string;
+  };
 
   const stringHandler = () => {
-    setString(1500)
-    setShow('')
-  }
+    setString(1500);
+    setShow("");
+  };
+
+  const backHandler = () => {
+    if (window.history.state && window.history.state.idx > 0) {
+      navigate(-1);
+    } else {
+      navigate("/", { replace: true }); // the current entry in the history stack will be replaced with the new one with { replace: true }
+    }
+  };
 
   return (
     <>
@@ -45,8 +51,8 @@ function MovieDashboard() {
         }}
       ></div>
       <div className="layer"></div>
-      <div className="back__icon">
-       <IconButton> <KeyboardBackspaceIcon /></IconButton>
+      <div className="back__icon" onClick={() => backHandler()}>
+        <span>Back</span>
       </div>
       <div className="movie__content">
         <div className="vote">
@@ -54,9 +60,12 @@ function MovieDashboard() {
         </div>
         <div className="name">
           <h3>{data?.name || data?.original_name || data?.original_title}</h3>
-          <p>{truncate(data?.overview , string)} <span onClick={() => stringHandler()}>{show}</span></p>
+          <p>
+            {truncate(data?.overview, string)}{" "}
+            <span onClick={() => stringHandler()}>{show}</span>
+          </p>
         </div>
-        <div className="button__box" onClick={() => navigate(-1)}>
+        <div className="button__box">
           <button>
             <PlayArrowIcon /> Play
           </button>

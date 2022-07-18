@@ -4,6 +4,9 @@ import Home from "./Components/Home/Home";
 import Widgets from "./Components/Widgets/Widgets";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MovieDashboard from "./Page/MovieDashboard/MovieDashboard";
+import Search from "./Components/Search/Search";
+import SlideBar from "./Components/SlideBar/SlideBar";
+import Favorite from "./Page/Favorite/Favorite";
 
 function App() {
   return (
@@ -14,7 +17,6 @@ function App() {
             path="/"
             element={
               <>
-                
                 <SideBar />
                 <Home />
                 <Widgets />
@@ -26,8 +28,27 @@ function App() {
             path="/:type/:id"
             element={
               <>
-            
-                <MovieDashboard/>
+                <MovieDashboard />
+              </>
+            }
+          />
+
+          <Route
+            path="/search"
+            element={
+              <>
+                <SlideBar />
+                <Search />
+              </>
+            }
+          />
+
+          <Route
+            path="/favorite"
+            element={
+              <>
+                <SideBar />
+                <Favorite />
               </>
             }
           />

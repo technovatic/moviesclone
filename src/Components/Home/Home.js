@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Discovers from "./Discovers/Discovers";
 import "./Home.css";
 import StarIcon from "@mui/icons-material/Star";
-import MoviesRow from "./MoviesRow.js/MoviesRow";
+import MoviesRow from "./MoviesRow/MoviesRow";
 import {
   useGetDiscoverQuery,
   useGetComedyQuery,

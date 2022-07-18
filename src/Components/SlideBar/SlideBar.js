@@ -9,22 +9,22 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import ShopIcon from "@mui/icons-material/Shop";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import SideItem from "./SideItems/SideItem";
-
+import {Link} from 'react-router-dom'
 function SlideBar() {
   return (
     <>
       <div className="sidebar">
-        <div className="logo">
+       <Link to="/"> <div className="logo">
           <img
             src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
             alt="logo"
           />
-        </div>
+        </div></Link>
         <div className="side__box">
           <div className="box__one">
             <span className="heading">Menu</span>
-            <SideItem Icon={HomeMaxIcon} Name="Home" active />
-            <SideItem Icon={FavoriteBorderIcon} Name="Favorite" />
+            <SideItem Icon={HomeMaxIcon} Name="Home" active link="/" />
+            <SideItem Icon={FavoriteBorderIcon} Name="Favorite" link="/favorite" />
             <SideItem Icon={ShopIcon} Name="Purchase" />
             <SideItem Icon={AccessTimeIcon} Name="Reminder" />
           </div>
@@ -32,7 +32,7 @@ function SlideBar() {
             <span className="heading">Others</span>
             <SideItem Icon={QueueIcon} Name="Playlist" />
             <SideItem Icon={PlayCircleOutlineIcon} Name="Live" />
-            <SideItem Icon={BookmarkBorderIcon} Name="Bookmark" />
+            <SideItem Icon={BookmarkBorderIcon} Name="Bookmark"  link="/favorite" />
             <SideItem Icon={SettingsIcon} Name="Setting" />
           </div>
         </div>

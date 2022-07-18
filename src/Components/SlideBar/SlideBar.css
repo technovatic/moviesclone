@@ -1,6 +1,7 @@
 .sidebar{
     width: 220px;
     background: rgb(42, 42, 42);
+    height: 100vh;
 }
 
 .logo{

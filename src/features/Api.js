@@ -63,6 +63,15 @@ export const moviesApi = createApi({
           };
         },
       }),
+
+      getSearch: builder.query({
+        query: (query) => {
+          return {
+            url: `/search/movie?query=${query}&api_key=${API_KEY}&page=1`,
+            method: "GET",
+          };
+        },
+      }),
     };
   },
 });
@@ -75,4 +84,5 @@ export const {
   useGetTvShowQuery,
   useGetPopularQuery,
   useGetByIdQuery,
+  useGetSearchQuery
 } = moviesApi;
