@@ -7,10 +7,18 @@
 .logo{
     padding-top: 15px;
     padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo h3{
+    text-decoration: none;
+    color: var(--second-color);
 }
 
 .logo img{
-    width: 100px;
+    width: 50px;
 }
 
 .side__box{
@@ -39,6 +47,21 @@
     }
 
     .logo{
+        padding-left: 13px;
+    }
+
+    .logo img{
+        width: 40px;
+    }
+
+    .logo h3{
+        display: none;
+    }
+
+   
+}
+@media (max-width:600px) {
+    .sidebar{
         display: none;
     }
 }

@@ -9,16 +9,21 @@ import {
   useGetTopRatedQuery,
   useGetTrendingQuery,
   useGetTvShowQuery,
+  useGetDocumentariesQuery,
+  useGetHorrorQuery,
+  useGetRomanceQuery,
 } from "../../features/Api";
 import { MoveDown } from "@mui/icons-material";
 
 function Home() {
-
   const { data } = useGetDiscoverQuery();
   const comedyData = useGetComedyQuery();
   const topRatedData = useGetTopRatedQuery();
   const trendingData = useGetTrendingQuery();
   const tvShowData = useGetTvShowQuery();
+  const romanceData = useGetRomanceQuery();
+  const horrorData = useGetHorrorQuery();
+  const docData = useGetDocumentariesQuery();
 
   const res =
     data?.results[Math.floor(Math.random() * data?.results.length - 1)];
@@ -30,6 +35,12 @@ function Home() {
   const resTr = topRatedData?.data?.results;
 
   const resTv = tvShowData?.data?.results;
+
+  const resR = romanceData?.data?.results;
+
+  const resH = horrorData?.data?.results;
+
+  const resD = docData?.data?.results;
 
   return (
     <>
@@ -97,6 +108,55 @@ function Home() {
         <div className="home__box">
           {resC &&
             resC.map((data) => (
+              <MoviesRow
+                id={data?.id}
+                img={data?.poster_path}
+                title={data.original_title || data.title}
+                release_date={data.release_date}
+                rate={data.vote_average}
+                type="movie"
+              />
+            ))}
+        </div>
+
+
+
+        <div className="heading">Romance Movies</div>
+        <div className="home__box">
+          {resR &&
+            resR.map((data) => (
+              <MoviesRow
+                id={data?.id}
+                img={data?.poster_path}
+                title={data.original_title || data.title}
+                release_date={data.release_date}
+                rate={data.vote_average}
+                type="movie"
+              />
+            ))}
+        </div>
+
+
+        <div className="heading">Horror Movies</div>
+        <div className="home__box">
+          {resH &&
+            resH.map((data) => (
+              <MoviesRow
+                id={data?.id}
+                img={data?.poster_path}
+                title={data.original_title || data.title}
+                release_date={data.release_date}
+                rate={data.vote_average}
+                type="movie"
+              />
+            ))}
+        </div>
+
+
+        <div className="heading"> Documentaries Movies</div>
+        <div className="home__box">
+          {resD &&
+            resD.map((data) => (
               <MoviesRow
                 id={data?.id}
                 img={data?.poster_path}

@@ -1,11 +1,12 @@
 .sideitem{
     display: flex;
     align-items: center;
+    padding: 10px;
     gap: 15px;
-    padding: 10px 10px;
     color: rgb(167, 164, 164);
     padding-left: 1rem;
     margin-top: 10px;
+    text-decoration: none;
 }
 
 .sideitem:hover{
@@ -34,6 +35,3 @@
    }
 }
 
-.link{
-    text-decoration: none;
-}

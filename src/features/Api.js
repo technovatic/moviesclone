@@ -72,6 +72,33 @@ export const moviesApi = createApi({
           };
         },
       }),
+
+      getRomance: builder.query({
+        query: () => {
+          return {
+            url: `/discover/movie?api_key=${API_KEY}&with_genres=10749`,
+            method: "GET",
+          };
+        },
+      }),
+
+      getHorror: builder.query({
+        query: () => {
+          return {
+            url: `/discover/movie?api_key=${API_KEY}&with_genres=27`,
+            method: "GET",
+          };
+        },
+      }),
+
+      getDocumentaries: builder.query({
+        query: () => {
+          return {
+            url: `/discover/movie?api_key=${API_KEY}&with_genres=99`,
+            method: "GET",
+          };
+        },
+      }),
     };
   },
 });
@@ -84,5 +111,8 @@ export const {
   useGetTvShowQuery,
   useGetPopularQuery,
   useGetByIdQuery,
-  useGetSearchQuery
+  useGetSearchQuery,
+  useGetHorrorQuery,
+  useGetDocumentariesQuery,
+  useGetRomanceQuery,
 } = moviesApi;

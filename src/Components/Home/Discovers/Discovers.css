@@ -98,3 +98,17 @@
         font-size: 13px;
     }
 }
+
+@media (max-width:400px) {
+    .discovers{
+        height: 360px;
+    }
+
+    .discover__content{
+        align-items: flex-end;
+    }
+
+    .button__box button:nth-child(2){
+        display: none;
+    }
+   }

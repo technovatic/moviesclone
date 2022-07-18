@@ -1,7 +1,12 @@
 .moviesRow{
     border-radius: 10px;
-    position: relative;
     transition: .3s;
+    position: relative;
+}
+
+.moviesRow img:hover{
+    transform: scale(1.1);
+    border: 1px solid #222;
 }
 
 .fav{
@@ -25,4 +30,5 @@
     max-height: 250px;
     border-radius: 10px;
     object-fit: cover;
+    margin-bottom: 10px;
 }

@@ -18,7 +18,7 @@
     align-items: center;
     gap: 20px;
     overflow-x: scroll;
-    height: 330px;
+    height: 350px;
     overflow-y: hidden;
     margin: 0 20px;
 }
@@ -98,4 +98,11 @@ height: 250px;
     .home{
         flex: 1;
     }
+  }
+
+
+  @media (max-width:400px) {
+   .home__boxx{
+    height: 370px;
+   }
   }

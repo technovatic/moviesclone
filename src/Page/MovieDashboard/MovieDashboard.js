@@ -5,11 +5,14 @@ import { useGetByIdQuery } from "../../features/Api";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import LanguageIcon from "@mui/icons-material/Language";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import IconButton from "@mui/material/IconButton";
 import { useNavigate } from "react-router-dom";
 const base_url = "https://image.tmdb.org/t/p/original";
 
 function MovieDashboard() {
+  const [icon, setIcon] = React.useState(<FavoriteBorderIcon />);
   const [string, setString] = useState(150);
   const [show, setShow] = useState("More");
   const navigate = useNavigate();
@@ -18,10 +21,7 @@ function MovieDashboard() {
     id: id,
     type: type,
   };
-  console.log(type, id);
   const { data } = useGetByIdQuery(info);
-
-  console.log(data);
 
   const truncate = (string, num) => {
     return string?.length > num ? string.substr(0, num - 1) + "..." : string;
@@ -40,6 +40,10 @@ function MovieDashboard() {
     }
   };
 
+  const favHandler = () => {
+    setIcon(<FavoriteIcon />)
+  }
+
   return (
     <>
       <div
@@ -49,11 +53,18 @@ function MovieDashboard() {
           backgroundImage: `url(${base_url}${data?.backdrop_path})`,
           backgroundPosition: "center center",
         }}
-      ></div>
+      >
+      <div className="like" onClick={() => favHandler()}>
+          {icon}
+        </div>
+      </div>
       <div className="layer"></div>
       <div className="back__icon" onClick={() => backHandler()}>
         <span>Back</span>
       </div>
+
+
+
       <div className="movie__content">
         <div className="vote">
           <span>{data?.vote_average * 10}%</span>

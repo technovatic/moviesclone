@@ -2,6 +2,7 @@
     width: 100%;
     height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 
 .layer{
@@ -80,4 +81,67 @@
 .back__icon .MuiSvgIcon-root{
     font-size: 30px;
     color: var(--four-color);
+}
+
+
+@media (max-width:850px) {
+    .movie__content{
+        left: 0;
+        padding: 2rem;
+    }
+
+    .movie__content h3{
+        font-size: 25px;
+    }
+
+    .back__icon{
+        left: 3rem;
+    }
+
+    .movie__content p{
+        max-width: 400px;
+        margin-right:  15px;
+    }
+}
+
+
+@media (max-width:450px) {
+    .movie__content{
+        left: 0;
+        padding: 0 1rem;
+    }
+
+    .back__icon{
+        left: 1rem;
+    }
+
+    .movie__content h3{
+        font-size: 20px;
+    }
+
+    .movie__content p{
+        font-size: 15px;
+    }
+}
+
+.like{
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.701);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    margin-left: auto;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    color: var(--second-color);
+    cursor: pointer;
+}
+
+.like .MuiSvgIcon-root{
+    z-index: 1100;
+    font-size: 25px;
 }
