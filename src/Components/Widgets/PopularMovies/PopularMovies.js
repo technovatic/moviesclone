@@ -11,7 +11,7 @@ function PopularMovies({Banner , title , description , id , type}) {
     }
   return (
     <>
-   <Link to={`${type}/${id}`}>
+   <Link to={`/${type}/${id}`}>
    <div className="popularMovies" key={id}>
         <div className="banner__img">
             <img src={`${base_url}${Banner}`} alt={title} />

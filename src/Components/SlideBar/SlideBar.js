@@ -27,7 +27,7 @@ function SlideBar() {
         <div className="side__box">
           <div className="box__one">
             <span className="heading">Menu</span>
-            <SideItem Icon={HomeMaxIcon} Name="Home" active link="/" />
+            <SideItem Icon={HomeMaxIcon} Name="Home" active link="/movies" />
             <SideItem
               Icon={FavoriteBorderIcon}
               Name="Favorite"
