@@ -1,7 +1,6 @@
 import React from "react";
 import "./MoviesRow.css";
 import StarIcon from "@mui/icons-material/Star";
-import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useDispatch } from "react-redux";
@@ -19,18 +18,18 @@ function MoviesRow({ img, id, title, type, release_date, rate }) {
     return string?.length > num ? string.substr(0, num - 1) + "..." : string;
   };
 
-  const fav = [{
-    id: id,
-    img: img,
-    title: title,
-    type: type,
-    release_date: release_date,
-    rate: rate,
-  }];
-
   const FavHanlder = () => {
     setIcon(<FavoriteIcon />);
-    dispatch(favAdd({fav}));
+    dispatch(
+      favAdd({
+        id: id,
+        img: img,
+        title: title,
+        type: type,
+        release_date: release_date,
+        rate: rate,
+      })
+    );
   };
 
   return (
