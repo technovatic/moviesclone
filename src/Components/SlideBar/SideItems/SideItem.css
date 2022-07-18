@@ -35,3 +35,9 @@
    }
 }
 
+
+
+.close{
+    background: #fff;
+    color: var(--second-color);
+}

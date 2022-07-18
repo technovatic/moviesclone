@@ -3,6 +3,10 @@ import Discovers from "./Discovers/Discovers";
 import "./Home.css";
 import StarIcon from "@mui/icons-material/Star";
 import MoviesRow from "./MoviesRow/MoviesRow";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../../features/buttonSlice";
+
 import {
   useGetDiscoverQuery,
   useGetComedyQuery,
@@ -16,6 +20,7 @@ import {
 import { MoveDown } from "@mui/icons-material";
 
 function Home() {
+  const dispatch = useDispatch();
   const { data } = useGetDiscoverQuery();
   const comedyData = useGetComedyQuery();
   const topRatedData = useGetTopRatedQuery();
@@ -42,10 +47,16 @@ function Home() {
 
   const resD = docData?.data?.results;
 
+
   return (
     <>
       <div className="home">
-        <div className="heading">Discovers</div>
+        <div className="heading top__heading">
+          <h3>Discovers</h3>{" "}
+          <span onClick={() => dispatch(toggleMenu(true))}>
+            <MenuIcon />
+          </span>
+        </div>
         <div className="home__boxx">
           <Discovers
             banner={res?.backdrop_path}
@@ -119,8 +130,6 @@ function Home() {
             ))}
         </div>
 
-
-
         <div className="heading">Romance Movies</div>
         <div className="home__box">
           {resR &&
@@ -136,7 +145,6 @@ function Home() {
             ))}
         </div>
 
-
         <div className="heading">Horror Movies</div>
         <div className="home__box">
           {resH &&
@@ -151,7 +159,6 @@ function Home() {
               />
             ))}
         </div>
-
 
         <div className="heading"> Documentaries Movies</div>
         <div className="home__box">

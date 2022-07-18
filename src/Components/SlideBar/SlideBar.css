@@ -62,6 +62,16 @@
 }
 @media (max-width:600px) {
     .sidebar{
-        display: none;
+        position: absolute;
+        top: 0;
+        left: -300px;
+        z-index: 1100;
     }
+
+    .sidebar__show{
+        left: 0;
+    }
+
+
+    
 }

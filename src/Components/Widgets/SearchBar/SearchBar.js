@@ -14,7 +14,7 @@ const navigate = useNavigate();
   const queryHandler = (e) => {
     e.preventDefault();
     dispatch(search(query));
-    navigate('/search')
+    navigate('search')
   };
 
   return (

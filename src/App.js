@@ -14,7 +14,7 @@ function App() {
       <Router>
         <Routes>
           <Route
-            path="/movies"
+            path="/"
             element={
               <>
                 <SideBar />

@@ -8,9 +8,10 @@
 .layer{
     position: absolute;
     width: 100%;
-    bottom: 0;
+    top: 0;
     left: 0;
     height: 100vh;
+    overflow: hidden;
     background: linear-gradient(211deg,transparent, rgba(0, 0, 0, 0.701), #000);
 }
 
