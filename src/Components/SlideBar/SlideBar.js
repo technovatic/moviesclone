@@ -15,11 +15,10 @@ import {useSelector} from 'react-redux';
 
 function SlideBar() {
 
-  const value = useSelector((state) => state.button.button)
-  console.log(value);
+ 
   return (
     <>
-      <div className={ value ? 'sidebar sidebar__show' : 'sidebar'}>
+      <div className= 'sidebar'>
         <Link to="/">
           {" "}
           <div className="logo">
