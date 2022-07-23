@@ -4,7 +4,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import SearchBar from "./SearchBar/SearchBar";
 import Tag from "./Tags/Tag";
 import PopularMovies from "./PopularMovies/PopularMovies";
-import { useSelector } from "react-redux";
 import { useGetPopularQuery } from "../../features/Api";
 
 function Widgets() {

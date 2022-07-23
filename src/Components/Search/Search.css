@@ -17,12 +17,14 @@
     padding-top: 1rem;
 }
 
+
 .searchh .home__box{
     height: 100vh;
     overflow-y: scroll;
     flex-wrap: wrap;
     padding-top: 1rem;
     padding-bottom: 5rem;
+    
 }
 
 .searchh .search{
@@ -44,4 +46,20 @@
     justify-content: space-between;
     width: 100%;
     gap: 2rem;
+}
+
+@media (max-width:600px) {
+
+    .search__top{
+        gap: 0;
+    }
+    .searchh .heading{
+        display: none;
+    }
+
+    .searchh .search{
+        margin-right: auto;
+        max-width: 300px;
+        padding-right: 1rem;
+    }
 }

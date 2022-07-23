@@ -8,7 +8,7 @@ import { favAdd } from "../../../features/favSlice";
 import { Link } from "react-router-dom";
 const base_url = "https://image.tmdb.org/t/p/original";
 
-function MoviesRow({ img, id, title, type, release_date, rate }) {
+function MoviesRow({ img, id, title, type, release_date, rate, grid }) {
   const year = new Date(release_date);
 
   const [icon, setIcon] = React.useState(<FavoriteBorderIcon />);
@@ -29,12 +29,13 @@ function MoviesRow({ img, id, title, type, release_date, rate }) {
         release_date: release_date,
         rate: rate,
       })
+      
     );
   };
 
   return (
     <>
-      <div className="moviesRow" key={id}>
+      <div className={ grid ? 'moviesRow gridMovies' : 'moviesRow'} key={id}>
         <Link to={`/${type}/${id}`}>
           <img src={`${base_url}${img}`} />
         </Link>
@@ -42,7 +43,7 @@ function MoviesRow({ img, id, title, type, release_date, rate }) {
           {icon}
         </div>
 
-        <div className="movie__info">
+        <div className={grid ? 'movies__info inn' : 'movies_info'}>
           <div className="movie__name">
             <h3>{truncate(title, 18)}</h3>
           </div>

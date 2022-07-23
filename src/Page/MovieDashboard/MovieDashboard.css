@@ -28,7 +28,8 @@
 
 .vote{
     background: var(--second-color);
-    width: 60px;
+    width:fit-content;
+    padding: 5px 10px;
     height: 60px;
     border-radius: 2px;
     display: flex;
@@ -125,24 +126,3 @@
     }
 }
 
-.like{
-    width: 40px;
-    height: 40px;
-    background: rgba(0, 0, 0, 0.701);
-    backdrop-filter: blur(10px);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1100;
-    margin-left: auto;
-    margin-top: 1rem;
-    margin-right: 2rem;
-    color: var(--second-color);
-    cursor: pointer;
-}
-
-.like .MuiSvgIcon-root{
-    z-index: 1100;
-    font-size: 25px;
-}

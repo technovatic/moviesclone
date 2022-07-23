@@ -44,6 +44,7 @@ function Search() {
           {res &&
             res.map((data) => (
               <MoviesRow
+                grid
                 id={data?.id}
                 img={data?.poster_path || data?.backdrop_path}
                 popcorn={popcorn}

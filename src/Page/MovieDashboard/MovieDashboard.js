@@ -4,10 +4,8 @@ import { useParams } from "react-router-dom";
 import { useGetByIdQuery } from "../../features/Api";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import LanguageIcon from "@mui/icons-material/Language";
-import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import IconButton from "@mui/material/IconButton";
 import { useNavigate } from "react-router-dom";
 const base_url = "https://image.tmdb.org/t/p/original";
 
@@ -54,9 +52,7 @@ function MovieDashboard() {
           backgroundPosition: "center center",
         }}
       >
-      <div className="like" onClick={() => favHandler()}>
-          {icon}
-        </div>
+     
       </div>
       <div className="layer"></div>
       <div className="back__icon" onClick={() => backHandler()}>

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  button: '',
+  button: [],
 };
 
 export const buttonSlice = createSlice({

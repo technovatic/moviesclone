@@ -5,20 +5,20 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import SettingsIcon from "@mui/icons-material/Settings";
 import QueueIcon from "@mui/icons-material/Queue";
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
-import ShopIcon from "@mui/icons-material/Shop";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 import SideItem from "./SideItems/SideItem";
 import { Link } from "react-router-dom";
-import {useSelector} from 'react-redux';
+import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
+
 
 function SlideBar() {
+  const [show, setShow] = React.useState(false);
 
- 
   return (
     <>
-      <div className= 'sidebar'>
+      <div className={show ? "sidebar side__show" : "sidebar"}>
         <Link to="/">
           {" "}
           <div className="logo">
@@ -33,12 +33,12 @@ function SlideBar() {
           <div className="box__one">
             <span className="heading">Menu</span>
             <SideItem Icon={HomeMaxIcon} Name="Home" active link="/" />
+            <SideItem Icon={SearchIcon} Name="Search" link="/search" />
             <SideItem
               Icon={FavoriteBorderIcon}
               Name="Favorite"
               link="/favorite"
             />
-            <SideItem Icon={ShopIcon} Name="Purchase" link="purchase" />
             <SideItem Icon={AccessTimeIcon} Name="Reminder" link="/reminder" />
           </div>
           <div className="box__two">
@@ -49,7 +49,11 @@ function SlideBar() {
             <SideItem Icon={CloseIcon} close />
           </div>
         </div>
+        <div className="menu__icon" onClick={() => setShow(!show)}>
+          <MenuIcon />
+        </div>
       </div>
+      <div className={show ? 'layer layer__show': 'layer'} onClick={() => setShow(false)}></div>
     </>
   );
 }

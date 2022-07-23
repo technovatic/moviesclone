@@ -30,11 +30,19 @@
 }
 
 @media (max-width:1200px) {
-   .sideitem span{
-    display: none;
-   }
-}
+    .sideitem span{
+     display: none;
+    }
+ }
 
+ 
+
+ @media (max-width:600px) {
+    .sideitem span{
+     display: flex;
+    }
+ }
+ 
 
 
 .close{
