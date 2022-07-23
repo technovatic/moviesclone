@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-    <a href="https://storied-cassata-35446a.netlify.app/"><img src="https://github.com/therogersak/movies/blob/main/movies_1.png?raw=true" alt="Logo" width="100%"></a>
+    <a href="https://movies-multiverse.netlify.app/"><img src="https://github.com/therogersak/movies/blob/main/movies_1.png?raw=true" alt="Logo" width="100%"></a>
 </p>
 
 
