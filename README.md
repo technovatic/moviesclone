@@ -5,7 +5,7 @@
 
 
 <p align="center">
-    Netflix homepage clone using React JS.
+    Movies homepage clone using React JS.
     <br />
     <br />
 </p>
