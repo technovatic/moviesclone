@@ -18,10 +18,10 @@ With the terminal available, follow the instructions below:
 
 ```bash
 # Clone the repository
-$ git clone https://github.com/therogersak/movies
+$ git clone https://github.com/therogersak/movies_clone_with_react-js
 
 # Access the movies folder
-$ cd movies
+$ cd movies_clone_with_react-js
 
 # Install dependencies
 $ npm install
@@ -47,5 +47,5 @@ the Rogers ak - [therogersak@gmail.com](mailto:therogersak@gmail.com)
 
 This project is under the MIT license.
 
-> Developed by [therogersak](https://www.linkedin.com/therogersak).
+> Developed by [therogersak](https://www.linkedin.com/in/therogersak).
 <br/>
