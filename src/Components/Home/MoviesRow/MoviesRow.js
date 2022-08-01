@@ -29,13 +29,12 @@ function MoviesRow({ img, id, title, type, release_date, rate, grid }) {
         release_date: release_date,
         rate: rate,
       })
-      
     );
   };
 
   return (
     <>
-      <div className={ grid ? 'moviesRow gridMovies' : 'moviesRow'} key={id}>
+      <div className={grid ? "moviesRow gridMovies" : "moviesRow"} key={id}>
         <Link to={`/${type}/${id}`}>
           <img src={`${base_url}${img}`} />
         </Link>
@@ -43,7 +42,7 @@ function MoviesRow({ img, id, title, type, release_date, rate, grid }) {
           {icon}
         </div>
 
-        <div className={grid ? 'movies__info inn' : 'movies_info'}>
+        <div className={grid ? "movies__info inn" : "movies_info"}>
           <div className="movie__name">
             <h3>{truncate(title, 18)}</h3>
           </div>
