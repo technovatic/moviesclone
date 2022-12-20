@@ -5,7 +5,7 @@
   --second-color: #1fdf64;
   --third-color: #222222;
   --four-color: #ffffff;
-  --five-color:#2e2e31;
+  --five-color: #2e2e31;
 }
 
 body {
@@ -26,7 +26,7 @@ body {
 }
 
 
-html{
+html {
   overflow: hidden;
+  scroll-behavior: smooth;
 }
-
